@@ -32,7 +32,7 @@ export function Amenities() {
         <motion.div 
           initial={{ opacity: 0, y: 30 }}
           whileInView={{ opacity: 1, y: 0 }}
-          viewport={{ once: true }}
+          viewport={{ once: false }}
           className="text-center max-w-3xl mx-auto mb-20"
         >
           <h2 className="text-primary uppercase tracking-widest text-sm font-bold mb-4">World-Class Facilities</h2>
@@ -48,7 +48,7 @@ export function Amenities() {
               key={index}
               initial={{ opacity: 0, y: 20 }}
               whileInView={{ opacity: 1, y: 0 }}
-              viewport={{ once: true }}
+              viewport={{ once: false }}
               transition={{ duration: 0.4, delay: index * 0.05 }}
               className="flex items-start gap-4 p-6 bg-background/50 border border-white/5 hover:border-primary/30 transition-colors group"
             >

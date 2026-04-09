@@ -28,7 +28,7 @@ export function Apartments() {
         <motion.div 
           initial={{ opacity: 0, y: 30 }}
           whileInView={{ opacity: 1, y: 0 }}
-          viewport={{ once: true }}
+          viewport={{ once: false }}
           className="mb-16 md:mb-24 flex flex-col md:flex-row md:items-end justify-between gap-8"
         >
           <div className="max-w-2xl">
@@ -47,7 +47,7 @@ export function Apartments() {
               key={plan.type}
               initial={{ opacity: 0, y: 40 }}
               whileInView={{ opacity: 1, y: 0 }}
-              viewport={{ once: true }}
+              viewport={{ once: false }}
               transition={{ duration: 0.6, delay: index * 0.2 }}
               className="bg-card border border-white/10 p-8 hover:border-primary transition-all duration-500 flex flex-col h-full relative group overflow-hidden"
             >

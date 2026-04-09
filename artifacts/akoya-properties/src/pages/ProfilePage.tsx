@@ -72,7 +72,7 @@ export default function ProfilePage() {
           <motion.div
             initial={{ opacity: 0, y: 20 }}
             whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true }}
+            viewport={{ once: false }}
             className="text-center"
           >
             <p className="text-primary uppercase tracking-widest text-xs font-bold mb-4">Pricing Guide</p>
@@ -93,7 +93,7 @@ export default function ProfilePage() {
                 key={apt.type}
                 initial={{ opacity: 0, y: 40 }}
                 whileInView={{ opacity: 1, y: 0 }}
-                viewport={{ once: true }}
+                viewport={{ once: false }}
                 transition={{ duration: 0.6, delay: i * 0.15 }}
                 className="bg-card border border-white/10 hover:border-primary transition-all duration-500 overflow-hidden flex flex-col"
                 data-testid={`apt-card-${i}`}
@@ -140,7 +140,7 @@ export default function ProfilePage() {
           <motion.div
             initial={{ opacity: 0, y: 20 }}
             whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true }}
+            viewport={{ once: false }}
             className="mb-16 text-center"
           >
             <p className="text-primary uppercase tracking-widest text-xs font-bold mb-4">How to Buy</p>
@@ -153,7 +153,7 @@ export default function ProfilePage() {
                 key={s.step}
                 initial={{ opacity: 0, y: 20 }}
                 whileInView={{ opacity: 1, y: 0 }}
-                viewport={{ once: true }}
+                viewport={{ once: false }}
                 transition={{ delay: i * 0.15 }}
                 className="text-center p-8 border border-white/10 hover:border-primary/40 transition-colors"
                 data-testid={`payment-step-${i}`}
@@ -168,7 +168,7 @@ export default function ProfilePage() {
           <motion.div
             initial={{ opacity: 0, y: 20 }}
             whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true }}
+            viewport={{ once: false }}
             className="mt-12 text-center"
           >
             <p className="text-muted-foreground text-sm mb-6">Prices are for semi-finished apartments. Final finishing options available upon request.</p>
@@ -185,7 +185,7 @@ export default function ProfilePage() {
           <motion.div
             initial={{ opacity: 0, y: 20 }}
             whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true }}
+            viewport={{ once: false }}
             className="mb-12"
           >
             <p className="text-primary uppercase tracking-widest text-xs font-bold mb-3">Included in Every Residence</p>
@@ -210,7 +210,7 @@ export default function ProfilePage() {
                 key={feat}
                 initial={{ opacity: 0, y: 10 }}
                 whileInView={{ opacity: 1, y: 0 }}
-                viewport={{ once: true }}
+                viewport={{ once: false }}
                 transition={{ delay: i * 0.05 }}
                 className="flex items-center gap-3 p-4 border border-white/8 hover:border-primary/30 transition-colors"
               >

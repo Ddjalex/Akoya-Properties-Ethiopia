@@ -9,7 +9,7 @@ export function Location() {
           <motion.div 
             initial={{ opacity: 0, x: -50 }}
             whileInView={{ opacity: 1, x: 0 }}
-            viewport={{ once: true }}
+            viewport={{ once: false }}
             className="w-full md:w-1/2"
           >
             <div className="w-16 h-16 bg-primary/10 rounded-full flex items-center justify-center mb-8 text-primary">
@@ -30,7 +30,7 @@ export function Location() {
           <motion.div 
             initial={{ opacity: 0, scale: 0.9 }}
             whileInView={{ opacity: 1, scale: 1 }}
-            viewport={{ once: true }}
+            viewport={{ once: false }}
             transition={{ duration: 0.8 }}
             className="w-full md:w-1/2 bg-black aspect-square md:aspect-auto md:h-[600px] border border-white/10 relative overflow-hidden flex items-center justify-center p-8"
           >

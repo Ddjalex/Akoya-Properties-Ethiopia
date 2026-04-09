@@ -9,7 +9,7 @@ export function PaymentPlan() {
           <motion.div 
             initial={{ opacity: 0, y: 20 }}
             whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true }}
+            viewport={{ once: false }}
             className="flex flex-col items-center text-center pt-8 md:pt-0 px-4"
           >
             <div className="text-5xl font-serif mb-4">10%</div>
@@ -20,7 +20,7 @@ export function PaymentPlan() {
           <motion.div 
             initial={{ opacity: 0, y: 20 }}
             whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true }}
+            viewport={{ once: false }}
             transition={{ delay: 0.1 }}
             className="flex flex-col items-center text-center pt-8 md:pt-0 px-4"
           >
@@ -32,7 +32,7 @@ export function PaymentPlan() {
           <motion.div 
             initial={{ opacity: 0, y: 20 }}
             whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true }}
+            viewport={{ once: false }}
             transition={{ delay: 0.2 }}
             className="flex flex-col items-center text-center pt-8 md:pt-0 px-4"
           >
@@ -44,7 +44,7 @@ export function PaymentPlan() {
           <motion.div 
             initial={{ opacity: 0, y: 20 }}
             whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true }}
+            viewport={{ once: false }}
             transition={{ delay: 0.3 }}
             className="flex flex-col items-center text-center pt-8 md:pt-0 px-4"
           >

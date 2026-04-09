@@ -51,7 +51,7 @@ export default function AboutPage() {
             <motion.div
               initial={{ opacity: 0, x: -30 }}
               whileInView={{ opacity: 1, x: 0 }}
-              viewport={{ once: true }}
+              viewport={{ once: false }}
               transition={{ duration: 0.8 }}
             >
               <p className="text-primary uppercase tracking-widest text-xs font-bold mb-4">Who We Are</p>
@@ -70,7 +70,7 @@ export default function AboutPage() {
             <motion.div
               initial={{ opacity: 0, x: 30 }}
               whileInView={{ opacity: 1, x: 0 }}
-              viewport={{ once: true }}
+              viewport={{ once: false }}
               transition={{ duration: 0.8 }}
               className="grid grid-cols-2 gap-4"
             >
@@ -94,7 +94,7 @@ export default function AboutPage() {
           <motion.div
             initial={{ opacity: 0, y: 20 }}
             whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true }}
+            viewport={{ once: false }}
             className="mb-12"
           >
             <p className="text-primary uppercase tracking-widest text-xs font-bold mb-3">By the Numbers</p>
@@ -116,7 +116,7 @@ export default function AboutPage() {
                 key={item.label}
                 initial={{ opacity: 0, y: 15 }}
                 whileInView={{ opacity: 1, y: 0 }}
-                viewport={{ once: true }}
+                viewport={{ once: false }}
                 transition={{ delay: i * 0.07 }}
                 className="border border-white/10 p-6 hover:border-primary/40 transition-colors"
                 data-testid={`spec-${item.label.toLowerCase().replace(/\s+/g, "-")}`}
@@ -135,7 +135,7 @@ export default function AboutPage() {
           <motion.div
             initial={{ opacity: 0, y: 20 }}
             whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true }}
+            viewport={{ once: false }}
             className="mb-16"
           >
             <p className="text-primary uppercase tracking-widest text-xs font-bold mb-3">What's Inside</p>
@@ -147,7 +147,7 @@ export default function AboutPage() {
                 key={section.floor}
                 initial={{ opacity: 0, y: 20 }}
                 whileInView={{ opacity: 1, y: 0 }}
-                viewport={{ once: true }}
+                viewport={{ once: false }}
                 transition={{ delay: i * 0.06 }}
                 className="grid grid-cols-1 md:grid-cols-4 border border-white/10 hover:border-primary/30 transition-colors"
               >
@@ -174,7 +174,7 @@ export default function AboutPage() {
             <motion.div
               initial={{ opacity: 0, y: 20 }}
               whileInView={{ opacity: 1, y: 0 }}
-              viewport={{ once: true }}
+              viewport={{ once: false }}
             >
               <p className="text-primary uppercase tracking-widest text-xs font-bold mb-4">Location</p>
               <h2 className="text-4xl font-serif text-white mb-6">Sarbet, Addis Ababa</h2>
@@ -191,7 +191,7 @@ export default function AboutPage() {
             <motion.div
               initial={{ opacity: 0, x: 30 }}
               whileInView={{ opacity: 1, x: 0 }}
-              viewport={{ once: true }}
+              viewport={{ once: false }}
               className="border border-white/10 p-8 space-y-4"
             >
               {[

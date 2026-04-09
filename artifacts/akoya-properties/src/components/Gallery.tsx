@@ -10,7 +10,7 @@ export function Gallery() {
         <motion.div
           initial={{ opacity: 0, y: 30 }}
           whileInView={{ opacity: 1, y: 0 }}
-          viewport={{ once: true }}
+          viewport={{ once: false }}
           transition={{ duration: 0.8 }}
         >
           <h2 className="text-primary uppercase tracking-widest text-sm font-bold mb-4">Vision & Reality</h2>
@@ -22,7 +22,7 @@ export function Gallery() {
         <motion.div
           initial={{ opacity: 0, scale: 0.96 }}
           whileInView={{ opacity: 1, scale: 1 }}
-          viewport={{ once: true }}
+          viewport={{ once: false }}
           transition={{ duration: 0.9 }}
           className="relative aspect-[4/3] overflow-hidden group"
         >
@@ -39,7 +39,7 @@ export function Gallery() {
         <motion.div
           initial={{ opacity: 0, scale: 0.96 }}
           whileInView={{ opacity: 1, scale: 1 }}
-          viewport={{ once: true }}
+          viewport={{ once: false }}
           transition={{ duration: 0.9, delay: 0.15 }}
           className="relative aspect-[4/3] overflow-hidden group"
         >
@@ -56,7 +56,7 @@ export function Gallery() {
         <motion.div
           initial={{ opacity: 0, scale: 0.96 }}
           whileInView={{ opacity: 1, scale: 1 }}
-          viewport={{ once: true }}
+          viewport={{ once: false }}
           transition={{ duration: 0.9, delay: 0.3 }}
           className="relative aspect-[21/9] md:col-span-2 overflow-hidden group"
         >

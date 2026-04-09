@@ -38,7 +38,7 @@ export default function ContactPage() {
             <motion.div
               initial={{ opacity: 0, x: -30 }}
               whileInView={{ opacity: 1, x: 0 }}
-              viewport={{ once: true }}
+              viewport={{ once: false }}
               transition={{ duration: 0.8 }}
             >
               <p className="text-primary uppercase tracking-widest text-xs font-bold mb-4">Get in Touch</p>
@@ -121,7 +121,7 @@ export default function ContactPage() {
             <motion.div
               initial={{ opacity: 0, x: 30 }}
               whileInView={{ opacity: 1, x: 0 }}
-              viewport={{ once: true }}
+              viewport={{ once: false }}
               transition={{ duration: 0.8 }}
               className="space-y-6"
             >
@@ -178,7 +178,7 @@ export default function ContactPage() {
           <motion.div
             initial={{ opacity: 0, y: 20 }}
             whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true }}
+            viewport={{ once: false }}
           >
             <h2 className="text-3xl md:text-4xl font-serif text-white mb-4">Your Future Address Awaits</h2>
             <p className="text-muted-foreground mb-10">

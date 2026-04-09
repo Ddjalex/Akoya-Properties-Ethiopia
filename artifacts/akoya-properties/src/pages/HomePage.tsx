@@ -100,7 +100,7 @@ export default function HomePage() {
           <motion.div
             initial={{ opacity: 0, y: 20 }}
             whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true }}
+            viewport={{ once: false }}
             className="text-center mb-16"
           >
             <p className="text-primary uppercase tracking-widest text-xs font-bold mb-3">Project Specifications</p>
@@ -112,7 +112,7 @@ export default function HomePage() {
                 key={stat.label}
                 initial={{ opacity: 0, y: 20 }}
                 whileInView={{ opacity: 1, y: 0 }}
-                viewport={{ once: true }}
+                viewport={{ once: false }}
                 transition={{ delay: i * 0.08 }}
                 className="text-center"
                 data-testid={`stat-${stat.label.toLowerCase().replace(/\s+/g, "-")}`}
@@ -132,7 +132,7 @@ export default function HomePage() {
             <motion.div
               initial={{ opacity: 0, x: -30 }}
               whileInView={{ opacity: 1, x: 0 }}
-              viewport={{ once: true }}
+              viewport={{ once: false }}
               transition={{ duration: 0.8 }}
             >
               <p className="text-primary uppercase tracking-widest text-xs font-bold mb-4">Why Akoya</p>
@@ -158,7 +158,7 @@ export default function HomePage() {
             <motion.div
               initial={{ opacity: 0, x: 30 }}
               whileInView={{ opacity: 1, x: 0 }}
-              viewport={{ once: true }}
+              viewport={{ once: false }}
               transition={{ duration: 0.8 }}
               className="relative"
             >
@@ -184,7 +184,7 @@ export default function HomePage() {
           <motion.div
             initial={{ opacity: 0, y: 20 }}
             whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true }}
+            viewport={{ once: false }}
           >
             <h2 className="text-3xl md:text-4xl font-serif text-black mb-4">Starting from 1,212,000 ETB Down Payment</h2>
             <p className="text-black/70 mb-8 uppercase tracking-widest text-sm">10% Down · Construction Progress Payments · 3-Year Delivery</p>

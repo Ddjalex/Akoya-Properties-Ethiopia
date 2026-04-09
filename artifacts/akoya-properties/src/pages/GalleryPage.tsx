@@ -73,7 +73,7 @@ export default function GalleryPage() {
                 key={img.title}
                 initial={{ opacity: 0, scale: 0.96 }}
                 whileInView={{ opacity: 1, scale: 1 }}
-                viewport={{ once: true }}
+                viewport={{ once: false }}
                 transition={{ duration: 0.7, delay: i * 0.12 }}
                 className={`relative overflow-hidden group cursor-pointer ${img.span}`}
                 data-testid={`gallery-item-${i}`}
@@ -104,7 +104,7 @@ export default function GalleryPage() {
           <motion.div
             initial={{ opacity: 0, y: 30 }}
             whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true }}
+            viewport={{ once: false }}
             className="max-w-2xl"
           >
             <p className="text-primary uppercase tracking-widest text-xs font-bold mb-4">Currently Under Construction</p>
@@ -130,7 +130,7 @@ export default function GalleryPage() {
             <motion.div
               initial={{ opacity: 0, x: -20 }}
               whileInView={{ opacity: 1, x: 0 }}
-              viewport={{ once: true }}
+              viewport={{ once: false }}
               className="overflow-hidden"
             >
               <img
@@ -142,7 +142,7 @@ export default function GalleryPage() {
             <motion.div
               initial={{ opacity: 0, x: 20 }}
               whileInView={{ opacity: 1, x: 0 }}
-              viewport={{ once: true }}
+              viewport={{ once: false }}
               className="flex flex-col justify-center p-4 lg:p-12"
             >
               <p className="text-primary uppercase tracking-widest text-xs font-bold mb-4">Design Philosophy</p>

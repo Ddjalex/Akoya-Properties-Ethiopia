@@ -9,7 +9,7 @@ export function Contact() {
         <motion.div
           initial={{ opacity: 0, y: 30 }}
           whileInView={{ opacity: 1, y: 0 }}
-          viewport={{ once: true }}
+          viewport={{ once: false }}
         >
           <h2 className="text-primary uppercase tracking-widest text-sm font-bold mb-4">Take The Next Step</h2>
           <h3 className="text-4xl md:text-6xl font-serif text-white mb-8">Secure Your Legacy</h3>

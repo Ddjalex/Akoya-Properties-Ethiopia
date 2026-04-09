@@ -18,7 +18,7 @@ export function Overview() {
             <motion.div
               initial={{ opacity: 0, x: -50 }}
               whileInView={{ opacity: 1, x: 0 }}
-              viewport={{ once: true }}
+              viewport={{ once: false }}
               transition={{ duration: 0.8 }}
             >
               <h2 className="text-primary uppercase tracking-widest text-sm font-bold mb-4">The Landmark</h2>
@@ -37,7 +37,7 @@ export function Overview() {
                 key={stat.label}
                 initial={{ opacity: 0, y: 20 }}
                 whileInView={{ opacity: 1, y: 0 }}
-                viewport={{ once: true }}
+                viewport={{ once: false }}
                 transition={{ duration: 0.5, delay: i * 0.1 }}
                 className="bg-black/80 backdrop-blur-sm p-8 flex flex-col items-center justify-center text-center hover:bg-white/5 transition-colors"
               >
