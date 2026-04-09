@@ -1,8 +1,16 @@
 import { motion } from "framer-motion";
 import { Phone, MessageSquare, MapPin, Clock, Building2 } from "lucide-react";
 import buildingRenderPath from "@assets/image_1775731985715.png";
+import { useSEO } from "@/hooks/useSEO";
 
 export default function ContactPage() {
+  useSEO({
+    title: "Contact Akoya Properties | Call or WhatsApp 0998885529",
+    description: "Contact Akoya Properties Ethiopia. Call or WhatsApp 0998885529. Visit our Sarbet site near Canada Embassy, Addis Ababa. Our property advisors are ready to help you reserve your luxury apartment.",
+    keywords: "contact Akoya Properties, Akoya Properties phone number, Akoya Properties WhatsApp, buy apartment Addis Ababa contact, real estate Ethiopia contact, Sarbet site sales office",
+    canonical: "https://akoyaproperties.com/contact",
+  });
+
   return (
     <>
       {/* Page header */}

@@ -1,6 +1,7 @@
 import { motion } from "framer-motion";
 import { Link } from "wouter";
 import greenBuildingPath from "@assets/image_1775731999150.png";
+import { useSEO } from "@/hooks/useSEO";
 
 const apartments = [
   {
@@ -39,6 +40,13 @@ const paymentSteps = [
 ];
 
 export default function ProfilePage() {
+  useSEO({
+    title: "Apartment Pricing | Akoya Properties Sarbet — 1BR, 2BR, 3BR Ethiopia",
+    description: "1 Bedroom 101m² from 12,120,000 ETB. 2 Bedroom 159m² from 19,080,000 ETB. 3 Bedroom 176m² from 22,000,000 ETB. Only 10% down payment. Construction progress payments. 3-year delivery.",
+    keywords: "Akoya Properties pricing, apartments for sale Addis Ababa, 1 bedroom apartment Ethiopia, 2 bedroom apartment Sarbet, 3 bedroom luxury apartment Addis Ababa, apartment prices Ethiopia ETB, buy apartment near Canada Embassy Addis Ababa",
+    canonical: "https://akoyaproperties.com/profile",
+  });
+
   return (
     <>
       {/* Page header */}

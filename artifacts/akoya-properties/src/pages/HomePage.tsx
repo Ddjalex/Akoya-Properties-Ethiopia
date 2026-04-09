@@ -2,6 +2,7 @@ import { motion } from "framer-motion";
 import { Link } from "wouter";
 import buildingRenderPath from "@assets/image_1775731985715.png";
 import greenBuildingPath from "@assets/image_1775731999150.png";
+import { useSEO } from "@/hooks/useSEO";
 
 const stats = [
   { label: "Floors", value: "3B+G+28" },
@@ -13,6 +14,13 @@ const stats = [
 ];
 
 export default function HomePage() {
+  useSEO({
+    title: "Akoya Properties Ethiopia | Luxury Apartments Sarbet Addis Ababa",
+    description: "Akoya Properties — Ethiopia's premier luxury real estate. Hotel-standard 3B+G+28 apartments in Sarbet, near Canada Embassy. 1BR from 12.1M ETB. Only 10% down payment. Call 0998885529.",
+    keywords: "Akoya Properties Ethiopia, luxury apartments Addis Ababa, Sarbet apartments, real estate Ethiopia, hotel standard apartments Addis Ababa, buy apartment Ethiopia, Akoya Properties Sarbet site",
+    canonical: "https://akoyaproperties.com/",
+  });
+
   return (
     <>
       {/* Hero */}

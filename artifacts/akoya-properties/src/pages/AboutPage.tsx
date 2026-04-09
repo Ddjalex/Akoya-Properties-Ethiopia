@@ -3,6 +3,7 @@ import { Link } from "wouter";
 import buildingRenderPath from "@assets/image_1775731985715.png";
 import constructionPath from "@assets/image_1775731995635.png";
 import greenBuildingPath from "@assets/image_1775731999150.png";
+import { useSEO } from "@/hooks/useSEO";
 
 const amenities = [
   { floor: "Basement", items: ["3-Level Car Parking", "EV Fast Charging Stations", "Modern Car Wash", "Valet Parking", "Garage Store per Apartment"] },
@@ -16,6 +17,13 @@ const amenities = [
 ];
 
 export default function AboutPage() {
+  useSEO({
+    title: "About Akoya Properties | Ethiopian Luxury Real Estate Developer",
+    description: "Akoya Properties is a leading Ethiopian real estate developer with 16+ years of experience. Building hotel-standard luxury apartments in Addis Ababa. Sarbet site near Canada Embassy — 30+ world-class amenities.",
+    keywords: "about Akoya Properties, Ethiopian real estate developer, luxury real estate developer Ethiopia, Akoya Properties history, Sarbet apartments Ethiopia, Addis Ababa property developer",
+    canonical: "https://akoyaproperties.com/about",
+  });
+
   return (
     <>
       {/* Page hero */}

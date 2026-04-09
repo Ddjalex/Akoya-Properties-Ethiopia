@@ -1,4 +1,5 @@
 import { motion } from "framer-motion";
+import { useSEO } from "@/hooks/useSEO";
 import buildingRenderPath from "@assets/image_1775731985715.png";
 import greenBuildingPath from "@assets/image_1775731999150.png";
 import constructionPath from "@assets/image_1775731995635.png";
@@ -37,6 +38,13 @@ const images = [
 ];
 
 export default function GalleryPage() {
+  useSEO({
+    title: "Gallery | Akoya Properties Sarbet Site — Addis Ababa",
+    description: "View the stunning architectural renders and construction progress photos of Akoya Properties Sarbet Site. 3B+G+28 hotel-standard luxury tower in Addis Ababa, Ethiopia.",
+    keywords: "Akoya Properties gallery, Sarbet site photos, luxury apartments Ethiopia images, Addis Ababa real estate photos, Akoya Properties renders, construction progress Ethiopia",
+    canonical: "https://akoyaproperties.com/gallery",
+  });
+
   return (
     <>
       {/* Page header */}
