@@ -3,6 +3,7 @@ import { Link } from "wouter";
 import buildingRenderPath from "@assets/image_1775731985715.png";
 import greenBuildingPath from "@assets/image_1775731999150.png";
 import { useSEO } from "@/hooks/useSEO";
+import { Properties } from "@/components/Properties";
 
 const stats = [
   { label: "Floors", value: "3B+G+28" },
@@ -132,6 +133,9 @@ export default function HomePage() {
           </div>
         </div>
       </section>
+
+      {/* Featured properties teaser — shows first 4 of 8 cards */}
+      <Properties limit={4} id="featured-properties" />
 
       {/* Feature teaser */}
       <section className="py-28 bg-black">

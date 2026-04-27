@@ -22,19 +22,24 @@ pnpm workspace monorepo using TypeScript. Each package manages its own dependenc
 - **Type**: react-vite static website
 - **Preview path**: `/`
 - **Purpose**: Luxury real estate marketing website for Akoya Properties Ethiopia
+- **Routes**: `/`, `/about`, `/properties`, `/gallery`, `/profile`, `/contact`
 - **Features**:
   - Full-page luxury landing site with dark gold theme
-  - Sticky navbar with smooth scroll navigation
+  - Sticky responsive navbar with mobile hamburger
   - Hero section with building render background
   - Project overview stats (3B+G+28 floors, 1300m², 6 apts/floor)
-  - Full amenities section with 30+ amenities
-  - Apartment pricing cards (1BR, 2BR, 3BR) in ETB
-  - Payment plan section
-  - Photo gallery with all 4 provided images
-  - Location section (Sarbet, near Canada Embassy)
-  - Contact section with WhatsApp (+251998885529) and Call buttons
-  - Footer with logo
-- **Images**: All 4 attached_assets images used via @assets alias
+  - 8 numbered property cards (Property 1 – Property 8) on `/properties`
+    page and a featured-4 teaser on the homepage
+  - About page with Mission / Vision / Why Choose Us / image gallery sections
+  - Property gallery page with category filters (All / Exterior / Interior / Construction / Amenities)
+  - Contact page with phone, WhatsApp, email, address, hours, contact form,
+    floating WhatsApp button and 6 social media icons
+    (Facebook, Instagram, Telegram, TikTok, YouTube, LinkedIn)
+  - Footer with social icons, full pages list, address & all contact methods
+- **Easy-to-edit data files**:
+  - `src/data/properties.ts` — the 8 property cards (number, image, title, price, etc.)
+  - `src/data/contact.ts` — phone, WhatsApp, email, address, social media links
+- **Images**: 4 attached_assets images used via @assets alias (logo + 3 renders)
 - **Animations**: Framer Motion scroll-triggered entrance animations
 
 ### API Server (`artifacts/api-server`)

@@ -1,0 +1,91 @@
+Please update my current static real estate website without breaking the existing design, layout, routing, file structure, or responsive behavior.
+
+Important rules:
+- Do not rebuild the project from scratch.
+- Keep the current website style and branding.
+- Reuse existing components, CSS classes, and assets where possible.
+- Make the website fully responsive for mobile, tablet, and desktop.
+- Do not remove existing sections unless needed.
+- Use clean comments so I can easily edit content later.
+
+Updates needed:
+
+1. Property Cards Section
+Create 8 property cards for the homepage or properties section.
+Each property card must have a clear number label so I can easily identify and edit them later.
+
+Use this structure:
+Property 1
+Property 2
+Property 3
+Property 4
+Property 5
+Property 6
+Property 7
+Property 8
+
+Each card should include:
+- Property image
+- Property title
+- Location
+- Price
+- Property type
+- Short description
+- Bedrooms, bathrooms, area if applicable
+- Button: “View Details” or “Contact Us”
+
+Make the property card data easy to edit in one place if possible, for example an array/object.
+
+2. About Page
+Create or update the About page.
+I will provide images for the About page, so prepare the layout to support multiple images.
+
+The About page should include:
+- Hero title
+- Short company introduction
+- Mission section
+- Vision section
+- Why Choose Us section
+- Image gallery or image blocks
+- Modern real estate style layout
+- Responsive mobile design
+
+Use placeholder text and images for now, but clearly mark where I should replace the text/images.
+
+3. Property Gallery
+Create a property gallery section/page.
+The gallery should show property images in a clean grid layout.
+
+Requirements:
+- Responsive image grid
+- Image hover effect
+- Optional category/filter style if easy
+- Works well on mobile
+- Use placeholder images for now
+- Add comments showing where to replace gallery images
+
+4. Contact Options + Social Media
+Update the contact section/page with multiple contact options.
+
+Include:
+- Phone number
+- WhatsApp button
+- Email
+- Office address
+- Contact form if already available
+- Social media links/icons:
+  - Facebook
+  - Instagram
+  - Telegram
+  - TikTok
+  - YouTube
+  - LinkedIn
+
+Use placeholder links for now and clearly comment where I should replace them.
+
+Final requirement:
+After updating, tell me exactly which files were changed and where I can edit:
+- 8 property card details
+- About page text/images
+- Gallery images
+- Contact and social media links

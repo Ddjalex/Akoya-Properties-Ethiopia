@@ -8,6 +8,7 @@ import HomePage from "@/pages/HomePage";
 import AboutPage from "@/pages/AboutPage";
 import GalleryPage from "@/pages/GalleryPage";
 import ProfilePage from "@/pages/ProfilePage";
+import PropertiesPage from "@/pages/PropertiesPage";
 import ContactPage from "@/pages/ContactPage";
 import NotFound from "@/pages/not-found";
 
@@ -22,6 +23,7 @@ function Router() {
           <Route path="/" component={HomePage} />
           <Route path="/about" component={AboutPage} />
           <Route path="/gallery" component={GalleryPage} />
+          <Route path="/properties" component={PropertiesPage} />
           <Route path="/profile" component={ProfilePage} />
           <Route path="/contact" component={ContactPage} />
           <Route component={NotFound} />

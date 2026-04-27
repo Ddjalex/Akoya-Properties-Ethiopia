@@ -1,9 +1,55 @@
 import { motion } from "framer-motion";
 import { Link } from "wouter";
+import { Target, Eye, Award, Shield, Sparkles, Users } from "lucide-react";
 import buildingRenderPath from "@assets/image_1775731985715.png";
 import constructionPath from "@assets/image_1775731995635.png";
 import greenBuildingPath from "@assets/image_1775731999150.png";
+import logoPath from "@assets/image_1775731967346.png";
 import { useSEO } from "@/hooks/useSEO";
+
+// =====================================================================
+// ABOUT PAGE — IMAGE GALLERY
+// =====================================================================
+// REPLACE THE IMAGES BELOW WITH YOUR OWN ABOUT-PAGE IMAGES.
+// 1. Drop new files into  artifacts/akoya-properties/attached_assets/
+//    (or anywhere reachable via the @assets / public alias)
+// 2. Import them at the top of this file
+// 3. Swap the `src` and `caption` values inside `aboutGalleryImages`
+// =====================================================================
+const aboutGalleryImages = [
+  { src: buildingRenderPath, caption: "Replace: Office / Team Photo" },
+  { src: greenBuildingPath, caption: "Replace: Building Detail" },
+  { src: constructionPath, caption: "Replace: On-site Visit" },
+  { src: logoPath, caption: "Replace: Brand / Award", isLogo: true },
+  { src: buildingRenderPath, caption: "Replace: Lifestyle Shot" },
+  { src: greenBuildingPath, caption: "Replace: Interior Render" },
+];
+
+// =====================================================================
+// WHY CHOOSE US — feel free to edit titles / descriptions
+// =====================================================================
+const whyChooseUs = [
+  {
+    icon: Award,
+    title: "Hotel-Standard Quality",
+    desc: "European-standard finishes, soundproof double-glazed windows and hospital-grade lifts in every residence.",
+  },
+  {
+    icon: Shield,
+    title: "24/7 Security",
+    desc: "Round-the-clock CCTV monitoring, controlled access and on-site security across all floors and parking levels.",
+  },
+  {
+    icon: Sparkles,
+    title: "30+ World-Class Amenities",
+    desc: "Indoor & outdoor pools, the city's largest gymnasium, VIP cinemas, spa, mall and fine-dining inside one tower.",
+  },
+  {
+    icon: Users,
+    title: "Trusted by Families",
+    desc: "A community-first development with daycare, indoor playground and a family-safe environment by design.",
+  },
+];
 
 const amenities = [
   { floor: "Basement", items: ["3-Level Car Parking", "EV Fast Charging Stations", "Modern Car Wash", "Valet Parking", "Garage Store per Apartment"] },
@@ -92,6 +138,164 @@ export default function AboutPage() {
                 <img src={constructionPath} alt="Construction" className="w-full h-full object-cover hover:scale-105 transition-transform duration-1000" />
               </div>
             </motion.div>
+          </div>
+        </div>
+      </section>
+
+      {/* ================================================================
+          MISSION & VISION
+         ================================================================ */}
+      <section className="py-24 bg-card border-y border-white/5">
+        <div className="container mx-auto px-6">
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
+            {/* Mission */}
+            <motion.div
+              initial={{ opacity: 0, y: 30 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: false }}
+              transition={{ duration: 0.6 }}
+              className="border border-white/10 p-10 hover:border-primary/40 transition-colors"
+              data-testid="about-mission"
+            >
+              <div className="w-14 h-14 border border-primary/40 flex items-center justify-center mb-6">
+                <Target className="w-6 h-6 text-primary" />
+              </div>
+              <p className="text-primary uppercase tracking-widest text-xs font-bold mb-3">
+                Our Mission
+              </p>
+              <h3 className="text-3xl font-serif text-white mb-5">
+                {/* REPLACE: mission heading */}
+                Building Homes Worth a Lifetime
+              </h3>
+              <p className="text-muted-foreground leading-relaxed">
+                {/* REPLACE: mission paragraph */}
+                To deliver world-class residences in Ethiopia by combining
+                hotel-grade craftsmanship, transparent pricing, and a
+                customer-first approach — so every Akoya owner feels at home
+                from day one.
+              </p>
+            </motion.div>
+
+            {/* Vision */}
+            <motion.div
+              initial={{ opacity: 0, y: 30 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: false }}
+              transition={{ duration: 0.6, delay: 0.1 }}
+              className="border border-white/10 p-10 hover:border-primary/40 transition-colors"
+              data-testid="about-vision"
+            >
+              <div className="w-14 h-14 border border-primary/40 flex items-center justify-center mb-6">
+                <Eye className="w-6 h-6 text-primary" />
+              </div>
+              <p className="text-primary uppercase tracking-widest text-xs font-bold mb-3">
+                Our Vision
+              </p>
+              <h3 className="text-3xl font-serif text-white mb-5">
+                {/* REPLACE: vision heading */}
+                Reshaping the Addis Ababa Skyline
+              </h3>
+              <p className="text-muted-foreground leading-relaxed">
+                {/* REPLACE: vision paragraph */}
+                To become Ethiopia's most respected luxury real estate brand —
+                creating landmark towers that elevate the standard of living
+                and inspire the next generation of Ethiopian developers.
+              </p>
+            </motion.div>
+          </div>
+        </div>
+      </section>
+
+      {/* ================================================================
+          WHY CHOOSE US
+         ================================================================ */}
+      <section className="py-24 bg-black">
+        <div className="container mx-auto px-6">
+          <motion.div
+            initial={{ opacity: 0, y: 20 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: false }}
+            className="mb-14 text-center"
+          >
+            <p className="text-primary uppercase tracking-widest text-xs font-bold mb-3">
+              Why Choose Us
+            </p>
+            <h2 className="text-3xl md:text-4xl font-serif text-white">
+              {/* REPLACE: why-choose-us heading */}
+              The Akoya Difference
+            </h2>
+          </motion.div>
+          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
+            {whyChooseUs.map((item, i) => {
+              const Icon = item.icon;
+              return (
+                <motion.div
+                  key={item.title}
+                  initial={{ opacity: 0, y: 20 }}
+                  whileInView={{ opacity: 1, y: 0 }}
+                  viewport={{ once: false }}
+                  transition={{ delay: i * 0.1 }}
+                  className="border border-white/10 p-8 hover:border-primary/40 hover:bg-card transition-colors"
+                  data-testid={`why-choose-us-${i + 1}`}
+                >
+                  <div className="w-12 h-12 border border-primary/40 flex items-center justify-center mb-6">
+                    <Icon className="w-5 h-5 text-primary" />
+                  </div>
+                  <h3 className="text-white font-serif text-xl mb-3">{item.title}</h3>
+                  <p className="text-muted-foreground text-sm leading-relaxed">{item.desc}</p>
+                </motion.div>
+              );
+            })}
+          </div>
+        </div>
+      </section>
+
+      {/* ================================================================
+          ABOUT IMAGE GALLERY
+          REPLACE images via the `aboutGalleryImages` array at top of file
+         ================================================================ */}
+      <section className="py-24 bg-card border-y border-white/5">
+        <div className="container mx-auto px-6">
+          <motion.div
+            initial={{ opacity: 0, y: 20 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: false }}
+            className="mb-12 text-center"
+          >
+            <p className="text-primary uppercase tracking-widest text-xs font-bold mb-3">
+              Moments at Akoya
+            </p>
+            <h2 className="text-3xl md:text-4xl font-serif text-white">A Glimpse Behind the Scenes</h2>
+            <p className="text-muted-foreground text-sm mt-3">
+              Replace these placeholder images with your own team, office and lifestyle photos.
+            </p>
+          </motion.div>
+
+          <div className="grid grid-cols-2 md:grid-cols-3 gap-3 md:gap-4">
+            {aboutGalleryImages.map((img, i) => (
+              <motion.figure
+                key={i}
+                initial={{ opacity: 0, scale: 0.95 }}
+                whileInView={{ opacity: 1, scale: 1 }}
+                viewport={{ once: false }}
+                transition={{ delay: i * 0.07 }}
+                className="relative aspect-square overflow-hidden group"
+                data-testid={`about-gallery-${i + 1}`}
+              >
+                <img
+                  src={img.src}
+                  alt={img.caption}
+                  loading="lazy"
+                  className={`w-full h-full transition-transform duration-700 group-hover:scale-105 ${
+                    img.isLogo ? "object-contain bg-black p-8" : "object-cover"
+                  }`}
+                />
+                <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-transparent to-transparent opacity-70 group-hover:opacity-90 transition-opacity" />
+                <figcaption className="absolute bottom-0 left-0 right-0 px-4 py-3 text-[10px] uppercase tracking-widest text-primary font-bold">
+                  {img.caption}
+                </figcaption>
+              </motion.figure>
+            ))}
           </div>
         </div>
       </section>
