@@ -1,17 +1,46 @@
-import { motion } from "framer-motion";
+import { useEffect, useState } from "react";
+import { motion, AnimatePresence } from "framer-motion";
 import { Button } from "@/components/ui/button";
-import buildingRenderPath from "@assets/image_1775731985715.png";
+import slide1 from "@assets/image_1777359875028.png";
+import slide2 from "@assets/image_1777359887441.png";
+import slide3 from "@assets/image_1777359900992.png";
+import slide4 from "@assets/image_1777359937463.png";
+
+const slides = [
+  { src: slide1, alt: "Akoya Properties — Shebamiles Platinum Partner event speaker" },
+  { src: slide2, alt: "Akoya Group partnership ceremony cake cutting" },
+  { src: slide3, alt: "Invest in the key to your future — Akoya Properties" },
+  { src: slide4, alt: "Bacary Sagna with Akoya Group" },
+];
+
+const SLIDE_DURATION_MS = 5000;
 
 export function Hero() {
+  const [index, setIndex] = useState(0);
+
+  useEffect(() => {
+    const id = setInterval(() => {
+      setIndex((i) => (i + 1) % slides.length);
+    }, SLIDE_DURATION_MS);
+    return () => clearInterval(id);
+  }, []);
+
   return (
     <section className="relative h-[100dvh] w-full flex items-center justify-center overflow-hidden bg-black pt-20">
       <div className="absolute inset-0 z-0">
         <div className="absolute inset-0 bg-black/60 z-10" />
-        <img
-          src={buildingRenderPath}
-          alt="Akoya Properties Sarbet Site"
-          className="w-full h-full object-cover object-center scale-110 transition-transform duration-[20000ms] hover:scale-100"
-        />
+        <AnimatePresence mode="sync">
+          <motion.img
+            key={index}
+            src={slides[index].src}
+            alt={slides[index].alt}
+            initial={{ opacity: 0, scale: 1.1 }}
+            animate={{ opacity: 1, scale: 1.05 }}
+            exit={{ opacity: 0, scale: 1 }}
+            transition={{ opacity: { duration: 1.2 }, scale: { duration: SLIDE_DURATION_MS / 1000, ease: "linear" } }}
+            className="absolute inset-0 w-full h-full object-cover object-center"
+          />
+        </AnimatePresence>
       </div>
 
       <div className="relative z-20 container mx-auto px-6 flex flex-col items-center text-center">
@@ -64,6 +93,22 @@ export function Hero() {
             <a href="#contact" data-testid="link-hero-contact">Contact Us</a>
           </Button>
         </motion.div>
+      </div>
+
+      {/* Slide indicator dots */}
+      <div className="absolute bottom-28 md:bottom-32 left-1/2 -translate-x-1/2 z-20 flex items-center gap-3">
+        {slides.map((_, i) => (
+          <button
+            key={i}
+            type="button"
+            onClick={() => setIndex(i)}
+            aria-label={`Go to slide ${i + 1}`}
+            data-testid={`hero-slide-dot-${i}`}
+            className={`h-1.5 rounded-full transition-all duration-500 ${
+              i === index ? "w-10 bg-primary" : "w-4 bg-white/30 hover:bg-white/60"
+            }`}
+          />
+        ))}
       </div>
 
       <motion.div

@@ -1,9 +1,22 @@
-import { motion } from "framer-motion";
+import { useEffect, useState } from "react";
+import { motion, AnimatePresence } from "framer-motion";
 import { Link } from "wouter";
-import buildingRenderPath from "@assets/image_1775731985715.png";
 import greenBuildingPath from "@assets/image_1775731999150.png";
+import heroSlide1 from "@assets/image_1777359875028.png";
+import heroSlide2 from "@assets/image_1777359887441.png";
+import heroSlide3 from "@assets/image_1777359900992.png";
+import heroSlide4 from "@assets/image_1777359937463.png";
 import { useSEO } from "@/hooks/useSEO";
 import { Properties } from "@/components/Properties";
+
+const heroSlides = [
+  { src: heroSlide1, alt: "Akoya Properties — Shebamiles Platinum Partner event" },
+  { src: heroSlide2, alt: "Akoya Group partnership ceremony" },
+  { src: heroSlide3, alt: "Invest in the key to your future — Akoya Properties" },
+  { src: heroSlide4, alt: "Bacary Sagna with Akoya Group" },
+];
+
+const HERO_SLIDE_DURATION_MS = 5000;
 
 const stats = [
   { label: "Floors", value: "3B+G+28" },
@@ -22,17 +35,36 @@ export default function HomePage() {
     canonical: "https://akoyaproperties.com/",
   });
 
+  const [heroIndex, setHeroIndex] = useState(0);
+
+  useEffect(() => {
+    const id = setInterval(() => {
+      setHeroIndex((i) => (i + 1) % heroSlides.length);
+    }, HERO_SLIDE_DURATION_MS);
+    return () => clearInterval(id);
+  }, []);
+
   return (
     <>
       {/* Hero */}
       <section className="relative h-[100dvh] w-full flex items-center justify-center overflow-hidden bg-black">
         <div className="absolute inset-0 z-0">
           <div className="absolute inset-0 bg-black/60 z-10" />
-          <img
-            src={buildingRenderPath}
-            alt="Akoya Properties Sarbet Site"
-            className="w-full h-full object-cover object-center"
-          />
+          <AnimatePresence mode="sync">
+            <motion.img
+              key={heroIndex}
+              src={heroSlides[heroIndex].src}
+              alt={heroSlides[heroIndex].alt}
+              initial={{ opacity: 0, scale: 1.08 }}
+              animate={{ opacity: 1, scale: 1.04 }}
+              exit={{ opacity: 0, scale: 1 }}
+              transition={{
+                opacity: { duration: 1.2 },
+                scale: { duration: HERO_SLIDE_DURATION_MS / 1000, ease: "linear" },
+              }}
+              className="absolute inset-0 w-full h-full object-cover object-center"
+            />
+          </AnimatePresence>
         </div>
 
         <div className="relative z-20 container mx-auto px-6 flex flex-col items-center text-center pt-20">
@@ -84,6 +116,22 @@ export default function HomePage() {
               Contact Us
             </Link>
           </motion.div>
+        </div>
+
+        {/* Slide indicator dots */}
+        <div className="absolute bottom-28 md:bottom-32 left-1/2 -translate-x-1/2 z-20 flex items-center gap-3">
+          {heroSlides.map((_, i) => (
+            <button
+              key={i}
+              type="button"
+              onClick={() => setHeroIndex(i)}
+              aria-label={`Go to slide ${i + 1}`}
+              data-testid={`hero-slide-dot-${i}`}
+              className={`h-1.5 rounded-full transition-all duration-500 ${
+                i === heroIndex ? "w-10 bg-primary" : "w-4 bg-white/30 hover:bg-white/60"
+              }`}
+            />
+          ))}
         </div>
 
         <motion.div
