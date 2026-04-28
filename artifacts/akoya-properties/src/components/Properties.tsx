@@ -215,13 +215,19 @@ export function Properties({ limit, showHeading = true, id = "properties" }: Pro
                       <p className="text-primary font-serif text-lg">{p.price}</p>
                     </div>
                   </div>
-                  <Link
-                    href={p.ctaHref}
-                    className="block w-full text-center py-3 bg-primary text-primary-foreground uppercase tracking-widest text-[11px] font-bold hover:bg-primary/90 transition-colors"
-                    data-testid={`property-${p.number}-cta`}
-                  >
-                    {p.ctaLabel}
-                  </Link>
+                  {(() => {
+                    const isViewDetails = /view\s*details?/i.test(p.ctaLabel);
+                    const href = isViewDetails ? `/properties/${p.number}` : p.ctaHref;
+                    return (
+                      <Link
+                        href={href}
+                        className="block w-full text-center py-3 bg-primary text-primary-foreground uppercase tracking-widest text-[11px] font-bold hover:bg-primary/90 transition-colors"
+                        data-testid={`property-${p.number}-cta`}
+                      >
+                        {p.ctaLabel}
+                      </Link>
+                    );
+                  })()}
                 </div>
               </div>
             </motion.article>
