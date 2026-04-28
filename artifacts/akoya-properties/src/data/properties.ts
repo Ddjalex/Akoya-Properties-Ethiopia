@@ -14,6 +14,7 @@ import construction from "@assets/image_1775731995635.png";
 import logo from "@assets/image_1775731967346.png";
 import twiinzProject from "@assets/image_1777358948910.png";
 import noveltyProject from "@assets/image_1777359394756.png";
+import ozoneProject from "@assets/image_1777359475501.png";
 
 export type Property = {
   // Display number — keeps card identification clear (Property 1, 2, 3 ...)
@@ -46,10 +47,12 @@ export type Property = {
   pricePerSqm?: string;     // e.g. "100,000 ETB / m² (Semi)"
   stock?: string;           // e.g. "1 & 3 Bedroom Apartments"
   // Optional unit-size variants (rendered as a small table when provided)
+  // totalPrice / advance can be omitted — the cell renders as "—"
   variants?: {
-    size: string;       // e.g. "96 m²"
-    totalPrice: string; // e.g. "9,600,000 ETB (Semi)"
-    advance: string;    // e.g. "960,000 ETB"
+    size: string;        // e.g. "96 m²"
+    totalPrice?: string; // e.g. "9,600,000 ETB (Semi)"
+    advance?: string;    // e.g. "960,000 ETB"
+    label?: string;      // optional row label, e.g. "1 Bedroom"
   }[];
 };
 
@@ -111,18 +114,30 @@ export const properties: Property[] = [
   // ----------------------------- Property 3 -----------------------------
   {
     number: 3,
-    image: construction,
-    title: "Akoya Family Residence",
-    location: "Sarbet, Addis Ababa",
-    price: "22,000,000 ETB",
-    type: "3 Bedroom Apartment",
+    image: ozoneProject,
+    title: "Ozone Project",
+    location: "Semen Mazegaja, near Sarem Hotel",
+    price: "From 98,000 ETB / m²",
+    type: "1, 2 & 3 Bedroom Apartments",
     description:
-      "Generously sized 3 bedroom apartment built for families — premium semi-finished standard with prime floor selection.",
-    bedrooms: "3",
-    bathrooms: "3",
-    area: "176 m²",
+      "Mid-rise residential development under construction at 50% completion — choose between Semi-Finished or Fully-Finished delivery across 1, 2 and 3 bedroom layouts.",
+    bedrooms: "1 / 2 / 3",
+    bathrooms: "",
+    area: "81 – 130 m²",
     ctaLabel: "View Details",
     ctaHref: "/contact",
+    status: "50% Completed",
+    deliveryTime: "2.5 yrs (Semi) · 3 yrs (Fully)",
+    advancePayment: "10%",
+    deliveryStatus: "Semi Finished / Fully Finished",
+    pricePerSqm: "98,000 ETB / m² (Semi)",
+    stock: "1, 2 & 3 Bedroom Apartments",
+    variants: [
+      { label: "1 Bedroom", size: "81 m²" },
+      { label: "2 Bedroom", size: "110 m²" },
+      { label: "2 Bedroom", size: "116 m²" },
+      { label: "3 Bedroom", size: "130 m²" },
+    ],
   },
   // ----------------------------- Property 4 -----------------------------
   {

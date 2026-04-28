@@ -173,25 +173,37 @@ export function Properties({ limit, showHeading = true, id = "properties" }: Pro
                 )}
 
                 {/* Variants table — unit-size pricing */}
-                {p.variants && p.variants.length > 0 && (
-                  <div className="border border-white/10 mb-5 overflow-hidden">
-                    <div className="grid grid-cols-3 text-[10px] uppercase tracking-widest font-bold bg-white/5 text-white/60">
-                      <span className="px-2 py-1.5">Size</span>
-                      <span className="px-2 py-1.5">Total</span>
-                      <span className="px-2 py-1.5">Advance</span>
-                    </div>
-                    {p.variants.map((v, idx) => (
-                      <div
-                        key={idx}
-                        className="grid grid-cols-3 text-[11px] text-white/80 border-t border-white/5"
-                      >
-                        <span className="px-2 py-1.5 text-primary font-medium">{v.size}</span>
-                        <span className="px-2 py-1.5">{v.totalPrice}</span>
-                        <span className="px-2 py-1.5">{v.advance}</span>
+                {p.variants && p.variants.length > 0 && (() => {
+                  const hasLabel = p.variants.some((v) => v.label);
+                  const hasTotal = p.variants.some((v) => v.totalPrice);
+                  const hasAdvance = p.variants.some((v) => v.advance);
+                  const colCount = 1 + (hasLabel ? 1 : 0) + (hasTotal ? 1 : 0) + (hasAdvance ? 1 : 0);
+                  const gridCols =
+                    colCount === 4 ? "grid-cols-4" :
+                    colCount === 3 ? "grid-cols-3" :
+                    colCount === 2 ? "grid-cols-2" : "grid-cols-1";
+                  return (
+                    <div className="border border-white/10 mb-5 overflow-hidden">
+                      <div className={`grid ${gridCols} text-[10px] uppercase tracking-widest font-bold bg-white/5 text-white/60`}>
+                        {hasLabel && <span className="px-2 py-1.5">Type</span>}
+                        <span className="px-2 py-1.5">Size</span>
+                        {hasTotal && <span className="px-2 py-1.5">Total</span>}
+                        {hasAdvance && <span className="px-2 py-1.5">Advance</span>}
                       </div>
-                    ))}
-                  </div>
-                )}
+                      {p.variants!.map((v, idx) => (
+                        <div
+                          key={idx}
+                          className={`grid ${gridCols} text-[11px] text-white/80 border-t border-white/5`}
+                        >
+                          {hasLabel && <span className="px-2 py-1.5 text-white/70">{v.label || "—"}</span>}
+                          <span className="px-2 py-1.5 text-primary font-medium">{v.size}</span>
+                          {hasTotal && <span className="px-2 py-1.5">{v.totalPrice || "—"}</span>}
+                          {hasAdvance && <span className="px-2 py-1.5">{v.advance || "—"}</span>}
+                        </div>
+                      ))}
+                    </div>
+                  );
+                })()}
 
                 {/* Price + CTA */}
                 <div className="mt-auto">
