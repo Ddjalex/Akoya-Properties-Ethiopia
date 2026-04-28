@@ -15,6 +15,7 @@ import logo from "@assets/image_1775731967346.png";
 import twiinzProject from "@assets/image_1777358948910.png";
 import noveltyProject from "@assets/image_1777359394756.png";
 import ozoneProject from "@assets/image_1777359475501.png";
+import ameliyazProject from "@assets/image_1777359567840.png";
 
 export type Property = {
   // Display number — keeps card identification clear (Property 1, 2, 3 ...)
@@ -142,18 +143,44 @@ export const properties: Property[] = [
   // ----------------------------- Property 4 -----------------------------
   {
     number: 4,
-    image: buildingRender,
-    title: "Akoya Sky Penthouse",
-    location: "28th Floor, Sarbet",
-    price: "On Request",
-    type: "Penthouse",
+    image: ameliyazProject,
+    title: "Ameliyaz Project",
+    location: "Sarbet, next to Canada Embassy",
+    price: "From 12,120,000 ETB",
+    type: "1, 2, 3, 4 Bed & Duplex",
     description:
-      "Top-floor penthouse with panoramic Addis Ababa skyline views, private terrace and exclusive lift access.",
-    bedrooms: "4",
-    bathrooms: "4",
-    area: "320 m²",
-    ctaLabel: "Contact Us",
+      "New flagship Sarbet tower currently on excavation — choose 1, 2, 3, 4 bedroom or duplex layouts. Per-m² price varies by floor (higher floors priced higher).",
+    bedrooms: "1 / 2 / 3 / 4 / Duplex",
+    bathrooms: "",
+    area: "101 – 176 m²",
+    ctaLabel: "View Details",
     ctaHref: "/contact",
+    status: "On Excavation",
+    deliveryTime: "3 yrs (Semi) · 3.5 yrs (Fully)",
+    advancePayment: "10%",
+    deliveryStatus: "Semi Finished",
+    pricePerSqm: "120,000 – 145,000 ETB / m² (Semi, varies by floor)",
+    stock: "1, 2, 3, 4 Bedroom & Duplex Apartments",
+    variants: [
+      {
+        label: "1 Bedroom",
+        size: "101 m²",
+        totalPrice: "From 12,120,000 ETB (Semi)",
+        advance: "From 1,212,000 ETB",
+      },
+      {
+        label: "2 Bedroom",
+        size: "159 m²",
+        totalPrice: "From 19,080,000 ETB (Semi)",
+        advance: "From 1,908,000 ETB",
+      },
+      {
+        label: "3 Bedroom",
+        size: "176 m²",
+        totalPrice: "From 21,120,000 ETB (Semi)",
+        advance: "From 2,112,000 ETB",
+      },
+    ],
   },
   // ----------------------------- Property 5 -----------------------------
   {
