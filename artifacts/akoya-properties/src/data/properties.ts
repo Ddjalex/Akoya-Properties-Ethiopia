@@ -12,6 +12,7 @@ import buildingRender from "@assets/image_1775731985715.png";
 import greenBuilding from "@assets/image_1775731999150.png";
 import construction from "@assets/image_1775731995635.png";
 import logo from "@assets/image_1775731967346.png";
+import twiinzProject from "@assets/image_1777358948910.png";
 
 export type Property = {
   // Display number — keeps card identification clear (Property 1, 2, 3 ...)
@@ -35,24 +36,33 @@ export type Property = {
   // Button label and link (use "/contact" or any URL)
   ctaLabel: string;
   ctaHref: string;
+  // Optional project info — leave undefined / "" to hide
+  status?: string;          // e.g. "90% Completed"
+  deliveryTime?: string;    // e.g. "1 year"
+  advancePayment?: string;  // e.g. "50%"
+  deliveryStatus?: string;  // e.g. "Semi finished"
 };
 
 export const properties: Property[] = [
   // ----------------------------- Property 1 -----------------------------
   {
     number: 1,
-    image: buildingRender,
-    title: "Akoya Signature Suite",
-    location: "Sarbet, Addis Ababa",
-    price: "12,120,000 ETB",
-    type: "1 Bedroom Apartment",
+    image: twiinzProject,
+    title: "Twiinz Project",
+    location: "Piyassa, near Monark Hotel",
+    price: "On Request",
+    type: "Residential Tower",
     description:
-      "Hotel-standard 1 bedroom residence with floor-to-ceiling windows, soundproof glazing and city views.",
-    bedrooms: "1",
-    bathrooms: "1",
-    area: "101 m²",
+      "Landmark twin-tower residential development in the heart of Piyassa — currently 90% completed and delivered semi-finished.",
+    bedrooms: "",
+    bathrooms: "",
+    area: "323 m²",
     ctaLabel: "View Details",
     ctaHref: "/contact",
+    status: "90% Completed",
+    deliveryTime: "1 year",
+    advancePayment: "50%",
+    deliveryStatus: "Semi finished",
   },
   // ----------------------------- Property 2 -----------------------------
   {

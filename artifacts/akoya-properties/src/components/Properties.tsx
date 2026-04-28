@@ -9,7 +9,7 @@
 
 import { motion } from "framer-motion";
 import { Link } from "wouter";
-import { BedDouble, Bath, Maximize2, MapPin } from "lucide-react";
+import { BedDouble, Bath, Maximize2, MapPin, Activity, Clock, Wallet, Hammer } from "lucide-react";
 import { properties } from "@/data/properties";
 
 type PropertiesProps = {
@@ -108,7 +108,7 @@ export function Properties({ limit, showHeading = true, id = "properties" }: Pro
 
                 {/* Specs row — only show available specs */}
                 {(p.bedrooms || p.bathrooms || p.area) && (
-                  <div className="flex flex-wrap items-center gap-x-4 gap-y-2 text-xs text-white/70 border-t border-white/5 pt-4 mb-5">
+                  <div className="flex flex-wrap items-center gap-x-4 gap-y-2 text-xs text-white/70 border-t border-white/5 pt-4 mb-3">
                     {p.bedrooms && (
                       <span className="flex items-center gap-1.5">
                         <BedDouble className="w-3.5 h-3.5 text-primary" />
@@ -125,6 +125,36 @@ export function Properties({ limit, showHeading = true, id = "properties" }: Pro
                       <span className="flex items-center gap-1.5">
                         <Maximize2 className="w-3.5 h-3.5 text-primary" />
                         {p.area}
+                      </span>
+                    )}
+                  </div>
+                )}
+
+                {/* Project info row — only show when any field is set */}
+                {(p.status || p.deliveryTime || p.advancePayment || p.deliveryStatus) && (
+                  <div className="grid grid-cols-2 gap-x-4 gap-y-2 text-[11px] text-white/70 border-t border-white/5 pt-4 mb-5">
+                    {p.status && (
+                      <span className="flex items-center gap-1.5">
+                        <Activity className="w-3.5 h-3.5 text-primary shrink-0" />
+                        <span><span className="text-white/50">Status:</span> {p.status}</span>
+                      </span>
+                    )}
+                    {p.deliveryTime && (
+                      <span className="flex items-center gap-1.5">
+                        <Clock className="w-3.5 h-3.5 text-primary shrink-0" />
+                        <span><span className="text-white/50">Delivery:</span> {p.deliveryTime}</span>
+                      </span>
+                    )}
+                    {p.advancePayment && (
+                      <span className="flex items-center gap-1.5">
+                        <Wallet className="w-3.5 h-3.5 text-primary shrink-0" />
+                        <span><span className="text-white/50">Advance:</span> {p.advancePayment}</span>
+                      </span>
+                    )}
+                    {p.deliveryStatus && (
+                      <span className="flex items-center gap-1.5">
+                        <Hammer className="w-3.5 h-3.5 text-primary shrink-0" />
+                        <span><span className="text-white/50">Finish:</span> {p.deliveryStatus}</span>
                       </span>
                     )}
                   </div>
