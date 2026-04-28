@@ -52,37 +52,37 @@ export type SocialLink = {
 export const SOCIAL_LINKS: SocialLink[] = [
   {
     name: "Facebook",
-    href: "https://facebook.com/", // REPLACE
+    href: "https://www.facebook.com/share/1B6SGpdVif/",
     icon: Facebook,
     brandClass: "hover:text-[#1877F2]",
   },
   {
     name: "Instagram",
-    href: "https://instagram.com/", // REPLACE
+    href: "https://www.instagram.com/mirafalemayehu99",
     icon: Instagram,
     brandClass: "hover:text-[#E1306C]",
   },
   {
     name: "Telegram",
-    href: "https://t.me/", // REPLACE
+    href: "https://t.me/Realestateadvisorrr",
     icon: TelegramIcon,
     brandClass: "hover:text-[#26A5E4]",
   },
   {
     name: "TikTok",
-    href: "https://tiktok.com/", // REPLACE
+    href: "https://www.tiktok.com/@akoya.properties",
     icon: TikTokIcon,
     brandClass: "hover:text-white",
   },
   {
     name: "YouTube",
-    href: "https://youtube.com/", // REPLACE
+    href: "", // hidden until a YouTube channel is provided
     icon: Youtube,
     brandClass: "hover:text-[#FF0000]",
   },
   {
     name: "LinkedIn",
-    href: "https://linkedin.com/", // REPLACE
+    href: "https://www.linkedin.com/in/miraf-alemayehu-35bb70323",
     icon: Linkedin,
     brandClass: "hover:text-[#0A66C2]",
   },

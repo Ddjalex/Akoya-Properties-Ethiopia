@@ -5,7 +5,7 @@ generated = []
 id = "7pbmdWxKppRMfpu4kK-rn"
 uri = "file://deploy/akoya-properties-deploy.tar.gz"
 type = "unspecified"
-title = "Akoya Properties — Deploy Bundle (.tar.gz, 37 MB) — alternative"
+title = "Akoya Properties — Deploy Bundle v1.0.1 (.tar.gz, 37 MB)"
 
 [[outputs]]
 id = "PeQih_On3SC39fAvhOY7t"
@@ -17,4 +17,4 @@ title = "Deployment Instructions"
 id = "tQtoMwyZqQ7QRRjMT9OL3"
 uri = "file://deploy/akoya-properties-deploy.zip"
 type = "unspecified"
-title = "Akoya Properties — Deploy Bundle (.zip, 37 MB) — RECOMMENDED"
+title = "Akoya Properties — Deploy Bundle v1.0.1 (.zip, 37 MB)"
