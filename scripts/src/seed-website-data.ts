@@ -94,7 +94,7 @@ const properties: InsertProperty[] = [
   },
   {
     number: 4,
-    image: "@assets/image_1777359567840.png",
+    image: "@assets/image_1777363911185.png",
     title: "Ameliyaz Project",
     location: "Sarbet, next to Canada Embassy",
     price: "From 12,120,000 ETB",

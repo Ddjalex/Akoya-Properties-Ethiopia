@@ -15,7 +15,7 @@ import logo from "@assets/image_1775731967346.png";
 import twiinzProject from "@assets/image_1777358948910.png";
 import noveltyProject from "@assets/image_1777359394756.png";
 import ozoneProject from "@assets/image_1777359475501.png";
-import ameliyazProject from "@assets/image_1777359567840.png";
+import ameliyazProject from "@assets/image_1777363911185.png";
 
 export type Property = {
   // Display number — keeps card identification clear (Property 1, 2, 3 ...)
