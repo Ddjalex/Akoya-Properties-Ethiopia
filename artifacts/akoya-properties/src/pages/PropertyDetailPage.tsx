@@ -18,10 +18,7 @@ import {
   MapPin,
   Activity,
   Clock,
-  Wallet,
   Hammer,
-  Tag,
-  Layers,
   Phone,
   MessageSquare,
   Mail,
@@ -66,7 +63,7 @@ export default function PropertyDetailPage() {
 
   const p = property;
   const hasProjectInfo =
-    p.status || p.deliveryTime || p.advancePayment || p.deliveryStatus || p.pricePerSqm || p.stock;
+    p.status || p.deliveryTime || p.deliveryStatus;
 
   const handleSubmit = (e: React.FormEvent) => {
     e.preventDefault();
@@ -89,13 +86,8 @@ export default function PropertyDetailPage() {
   // Variants table column logic mirrors the card
   const hasVariants = !!(p.variants && p.variants.length > 0);
   const hasLabel = hasVariants && p.variants!.some((v) => v.label);
-  const hasTotal = hasVariants && p.variants!.some((v) => v.totalPrice);
-  const hasAdvance = hasVariants && p.variants!.some((v) => v.advance);
-  const colCount = 1 + (hasLabel ? 1 : 0) + (hasTotal ? 1 : 0) + (hasAdvance ? 1 : 0);
-  const gridCols =
-    colCount === 4 ? "grid-cols-4" :
-    colCount === 3 ? "grid-cols-3" :
-    colCount === 2 ? "grid-cols-2" : "grid-cols-1";
+  const colCount = 1 + (hasLabel ? 1 : 0);
+  const gridCols = colCount === 2 ? "grid-cols-2" : "grid-cols-1";
 
   return (
     <>
@@ -195,17 +187,8 @@ export default function PropertyDetailPage() {
                     {p.status && (
                       <InfoRow icon={Activity} label="Status" value={p.status} />
                     )}
-                    {p.stock && (
-                      <InfoRow icon={Layers} label="Stock" value={p.stock} />
-                    )}
                     {p.deliveryTime && (
                       <InfoRow icon={Clock} label="Delivery" value={p.deliveryTime} />
-                    )}
-                    {p.pricePerSqm && (
-                      <InfoRow icon={Tag} label="Price / m²" value={p.pricePerSqm} />
-                    )}
-                    {p.advancePayment && (
-                      <InfoRow icon={Wallet} label="Advance" value={p.advancePayment} />
                     )}
                     {p.deliveryStatus && (
                       <InfoRow icon={Hammer} label="Finish" value={p.deliveryStatus} />
@@ -224,8 +207,6 @@ export default function PropertyDetailPage() {
                     <div className={`grid ${gridCols} text-[10px] uppercase tracking-widest font-bold bg-white/5 text-white/60`}>
                       {hasLabel && <span className="px-4 py-3">Type</span>}
                       <span className="px-4 py-3">Size</span>
-                      {hasTotal && <span className="px-4 py-3">Total Price</span>}
-                      {hasAdvance && <span className="px-4 py-3">Advance</span>}
                     </div>
                     {p.variants!.map((v, idx) => (
                       <div
@@ -235,8 +216,6 @@ export default function PropertyDetailPage() {
                       >
                         {hasLabel && <span className="px-4 py-3 text-white/70">{v.label || "—"}</span>}
                         <span className="px-4 py-3 text-primary font-medium">{v.size}</span>
-                        {hasTotal && <span className="px-4 py-3">{v.totalPrice || "—"}</span>}
-                        {hasAdvance && <span className="px-4 py-3">{v.advance || "—"}</span>}
                       </div>
                     ))}
                   </div>
@@ -247,13 +226,13 @@ export default function PropertyDetailPage() {
             {/* Sticky contact sidebar */}
             <aside className="lg:col-span-4">
               <div className="lg:sticky lg:top-24 space-y-6">
-                {/* Price card */}
+                {/* Contact card */}
                 <div className="border border-primary/40 bg-card p-6">
                   <p className="text-[10px] uppercase tracking-widest text-muted-foreground mb-2">
-                    Price
+                    Inquire
                   </p>
-                  <p className="text-primary font-serif text-3xl mb-5" data-testid="detail-price">
-                    {p.price}
+                  <p className="text-primary font-serif text-2xl mb-5" data-testid="detail-inquire-title">
+                    Contact us for details
                   </p>
 
                   <div className="space-y-3">

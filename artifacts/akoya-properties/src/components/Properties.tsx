@@ -9,7 +9,7 @@
 
 import { motion } from "framer-motion";
 import { Link } from "wouter";
-import { BedDouble, Bath, Maximize2, MapPin, Activity, Clock, Wallet, Hammer, Tag, Layers } from "lucide-react";
+import { BedDouble, Bath, Maximize2, MapPin, Activity, Clock, Hammer } from "lucide-react";
 import { properties } from "@/data/properties";
 
 type PropertiesProps = {
@@ -131,7 +131,7 @@ export function Properties({ limit, showHeading = true, id = "properties" }: Pro
                 )}
 
                 {/* Project info row — only show when any field is set */}
-                {(p.status || p.deliveryTime || p.advancePayment || p.deliveryStatus || p.pricePerSqm || p.stock) && (
+                {(p.status || p.deliveryTime || p.deliveryStatus) && (
                   <div className="grid grid-cols-1 gap-y-2 text-[11px] text-white/70 border-t border-white/5 pt-4 mb-4">
                     {p.status && (
                       <span className="flex items-start gap-1.5">
@@ -139,28 +139,10 @@ export function Properties({ limit, showHeading = true, id = "properties" }: Pro
                         <span><span className="text-white/50">Status:</span> {p.status}</span>
                       </span>
                     )}
-                    {p.stock && (
-                      <span className="flex items-start gap-1.5">
-                        <Layers className="w-3.5 h-3.5 text-primary shrink-0 mt-0.5" />
-                        <span><span className="text-white/50">Stock:</span> {p.stock}</span>
-                      </span>
-                    )}
                     {p.deliveryTime && (
                       <span className="flex items-start gap-1.5">
                         <Clock className="w-3.5 h-3.5 text-primary shrink-0 mt-0.5" />
                         <span><span className="text-white/50">Delivery:</span> {p.deliveryTime}</span>
-                      </span>
-                    )}
-                    {p.pricePerSqm && (
-                      <span className="flex items-start gap-1.5">
-                        <Tag className="w-3.5 h-3.5 text-primary shrink-0 mt-0.5" />
-                        <span><span className="text-white/50">Price/m²:</span> {p.pricePerSqm}</span>
-                      </span>
-                    )}
-                    {p.advancePayment && (
-                      <span className="flex items-start gap-1.5">
-                        <Wallet className="w-3.5 h-3.5 text-primary shrink-0 mt-0.5" />
-                        <span><span className="text-white/50">Advance:</span> {p.advancePayment}</span>
                       </span>
                     )}
                     {p.deliveryStatus && (
@@ -172,23 +154,16 @@ export function Properties({ limit, showHeading = true, id = "properties" }: Pro
                   </div>
                 )}
 
-                {/* Variants table — unit-size pricing */}
+                {/* Variants table — unit sizes only */}
                 {p.variants && p.variants.length > 0 && (() => {
                   const hasLabel = p.variants.some((v) => v.label);
-                  const hasTotal = p.variants.some((v) => v.totalPrice);
-                  const hasAdvance = p.variants.some((v) => v.advance);
-                  const colCount = 1 + (hasLabel ? 1 : 0) + (hasTotal ? 1 : 0) + (hasAdvance ? 1 : 0);
-                  const gridCols =
-                    colCount === 4 ? "grid-cols-4" :
-                    colCount === 3 ? "grid-cols-3" :
-                    colCount === 2 ? "grid-cols-2" : "grid-cols-1";
+                  const colCount = 1 + (hasLabel ? 1 : 0);
+                  const gridCols = colCount === 2 ? "grid-cols-2" : "grid-cols-1";
                   return (
                     <div className="border border-white/10 mb-5 overflow-hidden">
                       <div className={`grid ${gridCols} text-[10px] uppercase tracking-widest font-bold bg-white/5 text-white/60`}>
                         {hasLabel && <span className="px-2 py-1.5">Type</span>}
                         <span className="px-2 py-1.5">Size</span>
-                        {hasTotal && <span className="px-2 py-1.5">Total</span>}
-                        {hasAdvance && <span className="px-2 py-1.5">Advance</span>}
                       </div>
                       {p.variants!.map((v, idx) => (
                         <div
@@ -197,24 +172,14 @@ export function Properties({ limit, showHeading = true, id = "properties" }: Pro
                         >
                           {hasLabel && <span className="px-2 py-1.5 text-white/70">{v.label || "—"}</span>}
                           <span className="px-2 py-1.5 text-primary font-medium">{v.size}</span>
-                          {hasTotal && <span className="px-2 py-1.5">{v.totalPrice || "—"}</span>}
-                          {hasAdvance && <span className="px-2 py-1.5">{v.advance || "—"}</span>}
                         </div>
                       ))}
                     </div>
                   );
                 })()}
 
-                {/* Price + CTA */}
+                {/* CTA */}
                 <div className="mt-auto">
-                  <div className="flex items-baseline justify-between mb-4">
-                    <div>
-                      <p className="text-[10px] uppercase tracking-widest text-muted-foreground mb-1">
-                        Price
-                      </p>
-                      <p className="text-primary font-serif text-lg">{p.price}</p>
-                    </div>
-                  </div>
                   {(() => {
                     const isViewDetails = /view\s*details?/i.test(p.ctaLabel);
                     const href = isViewDetails ? `/properties/${p.number}` : p.ctaHref;
