@@ -9,7 +9,7 @@
 
 import { motion } from "framer-motion";
 import { Link } from "wouter";
-import { BedDouble, Bath, Maximize2, MapPin, Activity, Clock, Wallet, Hammer } from "lucide-react";
+import { BedDouble, Bath, Maximize2, MapPin, Activity, Clock, Wallet, Hammer, Tag, Layers } from "lucide-react";
 import { properties } from "@/data/properties";
 
 type PropertiesProps = {
@@ -131,32 +131,65 @@ export function Properties({ limit, showHeading = true, id = "properties" }: Pro
                 )}
 
                 {/* Project info row — only show when any field is set */}
-                {(p.status || p.deliveryTime || p.advancePayment || p.deliveryStatus) && (
-                  <div className="grid grid-cols-2 gap-x-4 gap-y-2 text-[11px] text-white/70 border-t border-white/5 pt-4 mb-5">
+                {(p.status || p.deliveryTime || p.advancePayment || p.deliveryStatus || p.pricePerSqm || p.stock) && (
+                  <div className="grid grid-cols-1 gap-y-2 text-[11px] text-white/70 border-t border-white/5 pt-4 mb-4">
                     {p.status && (
-                      <span className="flex items-center gap-1.5">
-                        <Activity className="w-3.5 h-3.5 text-primary shrink-0" />
+                      <span className="flex items-start gap-1.5">
+                        <Activity className="w-3.5 h-3.5 text-primary shrink-0 mt-0.5" />
                         <span><span className="text-white/50">Status:</span> {p.status}</span>
                       </span>
                     )}
+                    {p.stock && (
+                      <span className="flex items-start gap-1.5">
+                        <Layers className="w-3.5 h-3.5 text-primary shrink-0 mt-0.5" />
+                        <span><span className="text-white/50">Stock:</span> {p.stock}</span>
+                      </span>
+                    )}
                     {p.deliveryTime && (
-                      <span className="flex items-center gap-1.5">
-                        <Clock className="w-3.5 h-3.5 text-primary shrink-0" />
+                      <span className="flex items-start gap-1.5">
+                        <Clock className="w-3.5 h-3.5 text-primary shrink-0 mt-0.5" />
                         <span><span className="text-white/50">Delivery:</span> {p.deliveryTime}</span>
                       </span>
                     )}
+                    {p.pricePerSqm && (
+                      <span className="flex items-start gap-1.5">
+                        <Tag className="w-3.5 h-3.5 text-primary shrink-0 mt-0.5" />
+                        <span><span className="text-white/50">Price/m²:</span> {p.pricePerSqm}</span>
+                      </span>
+                    )}
                     {p.advancePayment && (
-                      <span className="flex items-center gap-1.5">
-                        <Wallet className="w-3.5 h-3.5 text-primary shrink-0" />
+                      <span className="flex items-start gap-1.5">
+                        <Wallet className="w-3.5 h-3.5 text-primary shrink-0 mt-0.5" />
                         <span><span className="text-white/50">Advance:</span> {p.advancePayment}</span>
                       </span>
                     )}
                     {p.deliveryStatus && (
-                      <span className="flex items-center gap-1.5">
-                        <Hammer className="w-3.5 h-3.5 text-primary shrink-0" />
+                      <span className="flex items-start gap-1.5">
+                        <Hammer className="w-3.5 h-3.5 text-primary shrink-0 mt-0.5" />
                         <span><span className="text-white/50">Finish:</span> {p.deliveryStatus}</span>
                       </span>
                     )}
+                  </div>
+                )}
+
+                {/* Variants table — unit-size pricing */}
+                {p.variants && p.variants.length > 0 && (
+                  <div className="border border-white/10 mb-5 overflow-hidden">
+                    <div className="grid grid-cols-3 text-[10px] uppercase tracking-widest font-bold bg-white/5 text-white/60">
+                      <span className="px-2 py-1.5">Size</span>
+                      <span className="px-2 py-1.5">Total</span>
+                      <span className="px-2 py-1.5">Advance</span>
+                    </div>
+                    {p.variants.map((v, idx) => (
+                      <div
+                        key={idx}
+                        className="grid grid-cols-3 text-[11px] text-white/80 border-t border-white/5"
+                      >
+                        <span className="px-2 py-1.5 text-primary font-medium">{v.size}</span>
+                        <span className="px-2 py-1.5">{v.totalPrice}</span>
+                        <span className="px-2 py-1.5">{v.advance}</span>
+                      </div>
+                    ))}
                   </div>
                 )}
 

@@ -13,6 +13,7 @@ import greenBuilding from "@assets/image_1775731999150.png";
 import construction from "@assets/image_1775731995635.png";
 import logo from "@assets/image_1775731967346.png";
 import twiinzProject from "@assets/image_1777358948910.png";
+import noveltyProject from "@assets/image_1777359394756.png";
 
 export type Property = {
   // Display number — keeps card identification clear (Property 1, 2, 3 ...)
@@ -38,9 +39,18 @@ export type Property = {
   ctaHref: string;
   // Optional project info — leave undefined / "" to hide
   status?: string;          // e.g. "90% Completed"
-  deliveryTime?: string;    // e.g. "1 year"
+  deliveryTime?: string;    // e.g. "1 year" — supports newlines
   advancePayment?: string;  // e.g. "50%"
-  deliveryStatus?: string;  // e.g. "Semi finished"
+  deliveryStatus?: string;  // e.g. "Semi finished" — supports newlines
+  // More optional project info
+  pricePerSqm?: string;     // e.g. "100,000 ETB / m² (Semi)"
+  stock?: string;           // e.g. "1 & 3 Bedroom Apartments"
+  // Optional unit-size variants (rendered as a small table when provided)
+  variants?: {
+    size: string;       // e.g. "96 m²"
+    totalPrice: string; // e.g. "9,600,000 ETB (Semi)"
+    advance: string;    // e.g. "960,000 ETB"
+  }[];
 };
 
 export const properties: Property[] = [
@@ -67,18 +77,36 @@ export const properties: Property[] = [
   // ----------------------------- Property 2 -----------------------------
   {
     number: 2,
-    image: greenBuilding,
-    title: "Akoya Garden Residence",
-    location: "Sarbet, Addis Ababa",
-    price: "19,080,000 ETB",
-    type: "2 Bedroom Apartment",
+    image: noveltyProject,
+    title: "Novelty Project",
+    location: "Piyassa, near Monark Hotel",
+    price: "From 9,600,000 ETB",
+    type: "1 & 3 Bedroom Apartments",
     description:
-      "Spacious 2 bedroom unit overlooking the vertical garden facade — open plan living and a private balcony.",
-    bedrooms: "2",
-    bathrooms: "2",
-    area: "159 m²",
+      "Premium high-rise tower currently on mat foundation — choose between Semi-Finished or Fully-Finished delivery in 96 m² or 143 m² layouts.",
+    bedrooms: "1 / 3",
+    bathrooms: "",
+    area: "96 m² · 143 m²",
     ctaLabel: "View Details",
     ctaHref: "/contact",
+    status: "On Mat Foundation",
+    deliveryTime: "3 yrs (Semi) · 3.5 yrs (Fully)",
+    advancePayment: "10%",
+    deliveryStatus: "Semi Finished / Fully Finished",
+    pricePerSqm: "100,000 ETB / m² (Semi)",
+    stock: "1 & 3 Bedroom Apartments",
+    variants: [
+      {
+        size: "96 m²",
+        totalPrice: "9,600,000 ETB (Semi)",
+        advance: "960,000 ETB",
+      },
+      {
+        size: "143 m²",
+        totalPrice: "14,300,000 ETB (Semi)",
+        advance: "1,430,000 ETB",
+      },
+    ],
   },
   // ----------------------------- Property 3 -----------------------------
   {
