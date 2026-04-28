@@ -1,0 +1,14 @@
+uploads = []
+generated = []
+
+[[outputs]]
+id = "7pbmdWxKppRMfpu4kK-rn"
+uri = "file://deploy/akoya-properties-deploy.tar.gz"
+type = "unspecified"
+title = "Akoya Properties — Production Bundle (37 MB)"
+
+[[outputs]]
+id = "PeQih_On3SC39fAvhOY7t"
+uri = "file://deploy/akoya-properties/README-DEPLOY.txt"
+type = "text"
+title = "Deployment Instructions"
