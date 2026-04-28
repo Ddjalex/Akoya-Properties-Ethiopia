@@ -1,6 +1,6 @@
 {
   "name": "akoya-properties",
-  "version": "1.0.2",
+  "version": "1.0.3",
   "description": "Akoya Properties marketing site - production bundle",
   "main": "app.js",
   "scripts": {
