@@ -32,7 +32,7 @@ task = "shell.exec"
 args = "PORT=23788 BASE_PATH=/ pnpm --filter @workspace/akoya-properties run dev"
 
 [agent]
-stack = "PNPM_WORKSPACE"
+stack = "BEST_EFFORT_FALLBACK"
 expertMode = true
 
 [postMerge]
