@@ -1,11 +1,23 @@
 import { motion } from "framer-motion";
 import { Link } from "wouter";
-import { Target, Eye, Award, Shield, Sparkles, Users } from "lucide-react";
+import { Target, Eye, Award, Shield, Sparkles, Users, Star } from "lucide-react";
 import buildingRenderPath from "@assets/image_1775731985715.png";
 import constructionPath from "@assets/image_1775731995635.png";
 import greenBuildingPath from "@assets/image_1775731999150.png";
 import logoPath from "@assets/image_1775731967346.png";
+import ambassadorPortrait from "@assets/image_1777360448897.png";
+import ambassadorEvent1 from "@assets/image_1777360412360.png";
+import ambassadorEvent2 from "@assets/image_1777360420892.png";
+import ambassadorEvent3 from "@assets/image_1777360428900.png";
+import ambassadorEvent4 from "@assets/image_1777360438288.png";
 import { useSEO } from "@/hooks/useSEO";
+
+const ambassadorMoments = [
+  { src: ambassadorEvent1, caption: "ShebaMiles Platinum Partner Gala" },
+  { src: ambassadorEvent2, caption: "“Progress Never Stop” Keynote" },
+  { src: ambassadorEvent3, caption: "Akoya × Ethiopian Airlines Red Carpet" },
+  { src: ambassadorEvent4, caption: "Partnership Ceremony Stage" },
+];
 
 // =====================================================================
 // ABOUT PAGE — IMAGE GALLERY
@@ -246,6 +258,121 @@ export default function AboutPage() {
                 </motion.div>
               );
             })}
+          </div>
+        </div>
+      </section>
+
+      {/* ================================================================
+          BRAND AMBASSADOR — Etsehiwot Abebe
+         ================================================================ */}
+      <section className="py-28 bg-card border-y border-white/5" data-testid="section-brand-ambassador">
+        <div className="container mx-auto px-6">
+          <motion.div
+            initial={{ opacity: 0, y: 20 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: false }}
+            className="mb-16 text-center"
+          >
+            <p className="text-primary uppercase tracking-widest text-xs font-bold mb-3 flex items-center justify-center gap-2">
+              <Star className="w-3.5 h-3.5" /> Brand Ambassador
+            </p>
+            <h2 className="text-4xl md:text-5xl font-serif text-white">The Face of Akoya</h2>
+            <p className="text-muted-foreground text-sm mt-4 max-w-2xl mx-auto leading-relaxed">
+              Representing elegance, ambition, and the spirit of "Progress Never Stops."
+            </p>
+          </motion.div>
+
+          <div className="grid grid-cols-1 lg:grid-cols-12 gap-10 lg:gap-14 items-center">
+            {/* Portrait */}
+            <motion.div
+              initial={{ opacity: 0, x: -30 }}
+              whileInView={{ opacity: 1, x: 0 }}
+              viewport={{ once: false }}
+              transition={{ duration: 0.8 }}
+              className="lg:col-span-5 relative"
+            >
+              <div className="relative aspect-[4/5] overflow-hidden border border-primary/30">
+                <img
+                  src={ambassadorPortrait}
+                  alt="Etsehiwot Abebe — Akoya Properties Brand Ambassador"
+                  className="w-full h-full object-cover hover:scale-105 transition-transform duration-1000"
+                />
+                <div className="absolute inset-0 bg-gradient-to-t from-black/60 via-transparent to-transparent pointer-events-none" />
+              </div>
+              <div className="absolute -bottom-6 -right-6 bg-primary text-primary-foreground px-6 py-4 hidden md:block">
+                <div className="text-[10px] uppercase tracking-widest font-bold">Official</div>
+                <div className="font-serif text-xl">Brand Ambassador</div>
+              </div>
+            </motion.div>
+
+            {/* Bio */}
+            <motion.div
+              initial={{ opacity: 0, x: 30 }}
+              whileInView={{ opacity: 1, x: 0 }}
+              viewport={{ once: false }}
+              transition={{ duration: 0.8 }}
+              className="lg:col-span-7"
+            >
+              <p className="text-primary uppercase tracking-widest text-xs font-bold mb-3">Etsehiwot Abebe</p>
+              <h3 className="text-3xl md:text-4xl font-serif text-white mb-6 leading-tight">
+                A Cultural Icon for a New Standard of Luxury
+              </h3>
+              <p className="text-muted-foreground leading-relaxed mb-5">
+                Etsehiwot Abebe — one of Ethiopia's most distinguished actresses and a recognised cultural icon — is the official Brand Ambassador for Akoya Properties. She embodies the company's core ethos of elegance, ambition and the belief that <span className="text-primary">"Progress Never Stops."</span>
+              </p>
+              <p className="text-muted-foreground leading-relaxed mb-5">
+                As the public face of Akoya, Etsehiwot represents our luxury developments and our historic status as the <span className="text-white">first real estate firm to be an Ethiopian Airlines ShebaMiles Platinum Partner</span> — a milestone that redefined what an Ethiopian property brand can achieve.
+              </p>
+              <p className="text-muted-foreground leading-relaxed mb-8">
+                From the partnership gala with Ethiopian Airlines to high-profile collaborations with international figures such as Bacary Sagna, her presence aligns Akoya with influence, artistry and a new generation of Ethiopian excellence.
+              </p>
+
+              <div className="grid grid-cols-3 gap-4 border-t border-white/10 pt-6">
+                <div>
+                  <p className="text-[10px] uppercase tracking-widest text-muted-foreground mb-1">Role</p>
+                  <p className="text-white text-sm font-light">Official Brand Ambassador</p>
+                </div>
+                <div>
+                  <p className="text-[10px] uppercase tracking-widest text-muted-foreground mb-1">Profession</p>
+                  <p className="text-white text-sm font-light">Actress & Cultural Icon</p>
+                </div>
+                <div>
+                  <p className="text-[10px] uppercase tracking-widest text-muted-foreground mb-1">Campaign</p>
+                  <p className="text-white text-sm font-light">Progress Never Stops</p>
+                </div>
+              </div>
+            </motion.div>
+          </div>
+
+          {/* Moments strip */}
+          <div className="mt-20">
+            <p className="text-primary uppercase tracking-widest text-[11px] font-bold mb-6 text-center">
+              Moments with the Ambassador
+            </p>
+            <div className="grid grid-cols-2 md:grid-cols-4 gap-3 md:gap-4">
+              {ambassadorMoments.map((m, i) => (
+                <motion.figure
+                  key={m.caption}
+                  initial={{ opacity: 0, y: 20 }}
+                  whileInView={{ opacity: 1, y: 0 }}
+                  viewport={{ once: false }}
+                  transition={{ delay: i * 0.08 }}
+                  className="relative aspect-[3/4] overflow-hidden group border border-white/10"
+                  data-testid={`ambassador-moment-${i + 1}`}
+                >
+                  <img
+                    src={m.src}
+                    alt={m.caption}
+                    loading="lazy"
+                    className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105"
+                  />
+                  <div className="absolute inset-0 bg-gradient-to-t from-black/85 via-black/20 to-transparent" />
+                  <figcaption className="absolute bottom-0 left-0 right-0 px-3 py-3 text-[10px] uppercase tracking-widest text-white font-semibold">
+                    {m.caption}
+                  </figcaption>
+                </motion.figure>
+              ))}
+            </div>
           </div>
         </div>
       </section>
