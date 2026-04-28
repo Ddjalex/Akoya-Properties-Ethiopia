@@ -1,6 +1,6 @@
 import { motion } from "framer-motion";
 import { Link } from "wouter";
-import { Target, Eye, Award, Shield, Sparkles, Users, Star } from "lucide-react";
+import { Target, Eye, Award, Shield, Sparkles, Users, Star, Plane, Handshake, Trophy } from "lucide-react";
 import buildingRenderPath from "@assets/image_1775731985715.png";
 import constructionPath from "@assets/image_1775731995635.png";
 import greenBuildingPath from "@assets/image_1775731999150.png";
@@ -373,6 +373,177 @@ export default function AboutPage() {
                 </motion.figure>
               ))}
             </div>
+          </div>
+        </div>
+      </section>
+
+      {/* ================================================================
+          PARTNERSHIPS & RECOGNITION
+         ================================================================ */}
+      <section className="py-28 bg-black relative overflow-hidden" data-testid="section-partnerships">
+        <div className="absolute inset-0 opacity-[0.06] pointer-events-none">
+          <img src={ambassadorEvent4} alt="" className="w-full h-full object-cover" />
+        </div>
+
+        <div className="relative container mx-auto px-6">
+          <motion.div
+            initial={{ opacity: 0, y: 20 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: false }}
+            className="mb-16 text-center"
+          >
+            <p className="text-primary uppercase tracking-widest text-xs font-bold mb-3 flex items-center justify-center gap-2">
+              <Trophy className="w-3.5 h-3.5" /> Partnerships & Recognition
+            </p>
+            <h2 className="text-4xl md:text-5xl font-serif text-white">A Historic Milestone</h2>
+            <p className="text-muted-foreground text-sm mt-4 max-w-2xl mx-auto leading-relaxed">
+              Akoya Properties is proud to be recognised at the highest tier of Ethiopia's most prestigious loyalty programme.
+            </p>
+          </motion.div>
+
+          {/* Featured milestone card */}
+          <motion.div
+            initial={{ opacity: 0, y: 30 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: false }}
+            transition={{ duration: 0.8 }}
+            className="relative border border-primary/40 bg-card/80 backdrop-blur-sm p-10 md:p-14 mb-12"
+            data-testid="card-shebamiles-partner"
+          >
+            <div className="absolute top-0 right-0 bg-primary text-primary-foreground px-5 py-2 text-[10px] uppercase tracking-widest font-bold">
+              Platinum Tier
+            </div>
+
+            <div className="grid grid-cols-1 lg:grid-cols-12 gap-10 items-center">
+              <div className="lg:col-span-7">
+                <div className="flex items-center gap-3 mb-5">
+                  <div className="w-12 h-12 border border-primary/40 flex items-center justify-center">
+                    <Plane className="w-5 h-5 text-primary" />
+                  </div>
+                  <div className="flex flex-col">
+                    <span className="text-primary text-[10px] uppercase tracking-widest font-bold">Ethiopian Airlines</span>
+                    <span className="text-white font-serif text-lg leading-tight">ShebaMiles Platinum Partner</span>
+                  </div>
+                </div>
+
+                <h3 className="text-3xl md:text-4xl font-serif text-white mb-5 leading-tight">
+                  The First Real Estate Firm to Become a ShebaMiles Platinum Partner
+                </h3>
+
+                <p className="text-muted-foreground leading-relaxed mb-4">
+                  In a landmark moment for Ethiopian real estate, Akoya Properties became the very first property developer in the country to be recognised as a Platinum Partner of <span className="text-white">Ethiopian Airlines ShebaMiles</span> — the national carrier's flagship loyalty programme.
+                </p>
+                <p className="text-muted-foreground leading-relaxed">
+                  This partnership extends Akoya's commitment to world-class service beyond construction — connecting our residents and clients to the rewards, prestige and global reach of Ethiopia's most trusted brand.
+                </p>
+              </div>
+
+              <div className="lg:col-span-5">
+                <div className="grid grid-cols-2 gap-4">
+                  {[
+                    { k: "First", v: "Real Estate ShebaMiles Partner" },
+                    { k: "Tier", v: "Platinum" },
+                    { k: "Partner", v: "Ethiopian Airlines" },
+                    { k: "Campaign", v: "Progress Never Stops" },
+                  ].map((s) => (
+                    <div
+                      key={s.k}
+                      className="border border-white/10 p-5 hover:border-primary/40 transition-colors"
+                      data-testid={`shebamiles-stat-${s.k.toLowerCase()}`}
+                    >
+                      <p className="text-primary text-[10px] uppercase tracking-widest font-bold mb-2">{s.k}</p>
+                      <p className="text-white text-sm font-light leading-snug">{s.v}</p>
+                    </div>
+                  ))}
+                </div>
+              </div>
+            </div>
+          </motion.div>
+
+          {/* Partner logos / wordmarks row */}
+          <motion.div
+            initial={{ opacity: 0, y: 20 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: false }}
+            transition={{ duration: 0.6, delay: 0.1 }}
+            className="border border-white/10 bg-card/40 backdrop-blur-sm py-8 px-6"
+          >
+            <p className="text-center text-muted-foreground text-[10px] uppercase tracking-[0.3em] mb-6">
+              In Official Partnership With
+            </p>
+            <div className="flex flex-wrap items-center justify-center gap-x-12 md:gap-x-20 gap-y-6">
+              <div className="flex items-center gap-3">
+                <div className="w-9 h-9 border border-primary/50 flex items-center justify-center">
+                  <span className="text-primary font-serif text-lg leading-none">A</span>
+                </div>
+                <div className="flex flex-col leading-tight">
+                  <span className="text-white font-serif text-lg tracking-wide">AKOYA</span>
+                  <span className="text-primary text-[9px] uppercase tracking-[0.3em]">Group</span>
+                </div>
+              </div>
+
+              <div className="hidden md:block w-px h-10 bg-white/10" />
+
+              <div className="flex items-center gap-3">
+                <Plane className="w-7 h-7 text-primary" />
+                <div className="flex flex-col leading-tight">
+                  <span className="text-white font-serif text-base">Ethiopian</span>
+                  <span className="text-primary text-[9px] uppercase tracking-[0.3em]">ShebaMiles</span>
+                </div>
+              </div>
+
+              <div className="hidden md:block w-px h-10 bg-white/10" />
+
+              <div className="flex items-center gap-3">
+                <div className="w-9 h-9 border border-primary/50 flex items-center justify-center">
+                  <span className="text-primary font-serif text-lg leading-none">A</span>
+                </div>
+                <div className="flex flex-col leading-tight">
+                  <span className="text-white font-serif text-lg tracking-wide">AKOYA</span>
+                  <span className="text-primary text-[9px] uppercase tracking-[0.3em]">Properties</span>
+                </div>
+              </div>
+            </div>
+          </motion.div>
+
+          {/* Why this matters strip */}
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-6 mt-12">
+            {[
+              {
+                icon: Trophy,
+                title: "Industry First",
+                desc: "The first Ethiopian real estate developer to reach ShebaMiles Platinum status — setting a new benchmark for the sector.",
+              },
+              {
+                icon: Handshake,
+                title: "Trusted Alliance",
+                desc: "A formal partnership with Ethiopia's flagship airline, anchoring Akoya within the country's most respected service ecosystem.",
+              },
+              {
+                icon: Sparkles,
+                title: "Member Benefits",
+                desc: "Our clients gain access to a brand experience rooted in elegance, hospitality and the spirit of Progress Never Stops.",
+              },
+            ].map((item, i) => {
+              const Icon = item.icon;
+              return (
+                <motion.div
+                  key={item.title}
+                  initial={{ opacity: 0, y: 20 }}
+                  whileInView={{ opacity: 1, y: 0 }}
+                  viewport={{ once: false }}
+                  transition={{ delay: i * 0.1 }}
+                  className="border border-white/10 p-7 hover:border-primary/40 hover:bg-card transition-colors"
+                  data-testid={`partnership-benefit-${i + 1}`}
+                >
+                  <div className="w-11 h-11 border border-primary/40 flex items-center justify-center mb-5">
+                    <Icon className="w-5 h-5 text-primary" />
+                  </div>
+                  <h4 className="text-white font-serif text-xl mb-2">{item.title}</h4>
+                  <p className="text-muted-foreground text-sm leading-relaxed">{item.desc}</p>
+                </motion.div>
+              );
+            })}
           </div>
         </div>
       </section>
