@@ -21,6 +21,14 @@ import buildingRenderPath from "@assets/image_1775731985715.png";
 import greenBuildingPath from "@assets/image_1775731999150.png";
 import constructionPath from "@assets/image_1775731995635.png";
 import logoPath from "@assets/image_1775731967346.png";
+import akoyaParkviewPath from "@assets/image_1777372916442.png";
+import noveltyTowerPath from "@assets/image_1777372927369.png";
+import goldSouqLocationPath from "@assets/image_1777372948161.png";
+import elevateStatusPath from "@assets/image_1777372954631.png";
+import goldSouqYellowPath from "@assets/image_1777372961197.png";
+import akoyaSarbetGoldPath from "@assets/image_1777372971487.png";
+import goldSouqBusinessPath from "@assets/image_1777372977622.png";
+import akoyaEventPath from "@assets/image_1777372984074.png";
 
 // Filter categories — edit / add as needed
 const CATEGORIES = ["All", "Exterior", "Interior", "Construction", "Amenities"] as const;
@@ -103,6 +111,64 @@ const galleryImages: Array<{
     description: "Akoya Properties — Redefining Ethiopian luxury real estate.",
     category: "Exterior",
     isLogo: true,
+  },
+  // ---------- New additions ----------
+  {
+    src: akoyaParkviewPath,
+    title: "Akoya Park View",
+    description:
+      "Architectural render of the Akoya Park View tower — modern curved facade with lush rooftop greenery.",
+    category: "Exterior",
+    span: "lg:col-span-2 lg:row-span-2",
+  },
+  {
+    src: noveltyTowerPath,
+    title: "Novelty Tower",
+    description:
+      "Premium high-rise Novelty residences in Piyassa — elegant balconies with vertical gardens.",
+    category: "Exterior",
+  },
+  {
+    src: akoyaSarbetGoldPath,
+    title: "Akoya Sarbet — Golden Hour",
+    description:
+      "Akoya Group flagship Sarbet tower bathed in warm golden light against an Addis Ababa sky.",
+    category: "Exterior",
+  },
+  {
+    src: goldSouqYellowPath,
+    title: "Gold Souq — Wholesale Hub",
+    description:
+      "Gold Souq commercial tower at 4 Kilo — Addis Ababa's new wholesale destination.",
+    category: "Exterior",
+  },
+  {
+    src: goldSouqLocationPath,
+    title: "Gold Souq — Prime Location",
+    description:
+      "Strategic positioning of Gold Souq — featured in our Ethiopian Airlines ShebaMiles partnership campaign.",
+    category: "Exterior",
+  },
+  {
+    src: goldSouqBusinessPath,
+    title: "Gold Souq — Business Grows",
+    description:
+      "Where business grows: 20% down payment, up to 15% discount, ShebaMiles rewards and high foot-traffic location.",
+    category: "Exterior",
+  },
+  {
+    src: elevateStatusPath,
+    title: "Elevate Your Status",
+    description:
+      "Own property, earn miles — Akoya Properties × Ethiopian Airlines ShebaMiles loyalty partnership.",
+    category: "Amenities",
+  },
+  {
+    src: akoyaEventPath,
+    title: "Bacary Sagna × Akoya",
+    description:
+      "Akoya Group brand ambassador Bacary Sagna at the Akoya × ShebaMiles partnership launch event.",
+    category: "Amenities",
   },
 ];
 
